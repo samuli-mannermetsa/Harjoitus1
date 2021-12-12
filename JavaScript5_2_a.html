@@ -1,0 +1,48 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+    <body>
+<select id="city" name="city" onchange="updateSelection()">
+ <option value="Helsinki">Helsinki</option>
+ <option value="Paris">Pariisi</option>
+ <option value="London">Lontoo</option>
+ <option value="Madrid">Madrid</option>
+ <option value="Stockholm">Tukholma</option>
+ <option value="Rovaniemi">Rovaniemi</option>
+ <option value="Kuopio">Kuopio</option>
+</select>
+ <button id="update" name="update" onclick="lookUpValue()">Hae</button><br>
+<p id="get1"></p>
+<p id="get2"></p>
+<p id="get3"></p>
+<p id="get4"></p>
+    </body>
+    <script>
+        var api = ""
+        
+        function updateSelection() {
+        var e = document.getElementById("city");
+        var strUser = e.options[e.selectedIndex].value;
+        
+        api = "https://api.openweathermap.org/data/2.5/weather?q=" + strUser + "&APPID=0e886f7ad4a841c34979c45acf1bfaf2&units=metric&lang=fi'"
+        }
+        
+        function lookUpValue() {
+        
+        $.getJSON(api, {format:'json'},function(data){
+
+        var temperature = Math.round((data.main.temp)) + "°C"
+        document.getElementById("get1").innerHTML = "Lämpötila: " + temperature;
+
+        var wind = (data.wind.speed)
+        document.getElementById("get3").innerHTML = "Tuulen nopeus: " + wind + " m/s";
+        
+        var clouds = (data.clouds.all)
+        document.getElementById("get4").innerHTML = "Pilvisyys: " + clouds;
+        
+        var humidity = (data.main.humidity)
+        document.getElementById("get2").innerHTML = "Kosteus: " + humidity});
+        }
+    </script>
+</html>
