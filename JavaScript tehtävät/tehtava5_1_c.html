@@ -1,0 +1,45 @@
+<html>
+<body>
+    <select id="posts" name = "posts" onchange = "showValues()"></select>
+    <br/><br/>
+    <input type="text" id="title"><br/>
+    <input type="text" id = "body"><br/>
+    <button type="button">Update</button>
+    <script>
+        
+        let htmlText = ""
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then((response) => response.json())
+            .then((json) => {
+                console.log(json)
+                json.forEach(addOptionValue)
+                document.getElementById("posts").innerHTML = htmlText;
+
+        });
+        showValues()
+        
+        function addOptionValue(value, index) {
+            if(index == 0){
+                htmlText += "<option value ='" + value.id + "' selected>" + value.title + "</option>"
+            }
+            else {
+            htmlText += "<option value ='" + value.id + "'>" + value.title + "</option>"
+        }
+    }
+        function showValues() {
+            let chosenID = document.getElementById("posts").value
+            console.log("Value= " + chosenID)
+
+            fetch('https://jsonplaceholder.typicode.com/posts/' + chosenID)
+                .then((response) => response.json())
+                .then((json) => {
+                    console.log(json)
+                    document.getElementById("title").value = json.title
+                    document.getElementById("body").value = json.body
+                });
+
+        }
+    </script>
+
+</body>
+</html>

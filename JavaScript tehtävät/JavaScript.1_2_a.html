@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Give the following values and count the sum.</p>
+    x = <input type="text" id="nm1"> <br/>
+    y = <input type="text" id="nm2"> <br/>
+
+    <button type="button" onclick="Count()">x+y</button>
+    <div id="tulos"></div>
+    <p id="demo"></p>
+    <script>
+        function Count() {
+            let nm1 = document.getElementById("nm1").value
+            nm1 =parseFloat(nm1)
+            let nm2 = document.getElementById("nm2").value
+            nm2 =parseFloat(nm2)
+            let total = nm1 + nm2
+            console.log("The value of x + y is:" + total)
+            document.getElementById("tulos").innerHTML = "The value of x + y is:" + total;
+        }
+    </script>
+ </body>
+ </html>

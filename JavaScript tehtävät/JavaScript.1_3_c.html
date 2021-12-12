@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        
+        table, th, td {
+            border:1px solid rgb(192, 127, 41);
+        }
+    </style>
+    </head>
+<body>
+    <table id="libraryTable"></table>
+    <button onclick="sortTable()">sort</button>
+
+    <script>x
+        var library = [
+        { author: 'xBill Gates', title: 'The road ahead', libraryID: 1254},
+        { author:'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+        {author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+        ];
+        printTable(library)
+        function sortTable(){
+            library.sort(function(a, b) {
+                if(a.author < b.author) {
+                    return -1
+                }
+                return 1
+            })
+            printTable(library)
+        }
+        function printTable(library)
+        {
+            let htmlText = ""
+            for (i in library){
+                htmlText += "<tr><td>" + library[i].author +"</td><td>" + library[i].title + "</td><td>" + library[i].libraryID + "</td></tr>"
+            }
+            console.log(htmlText)
+            document.getElementById("libraryTable").innerHTML = htmlText
+        }
+    </script>
+</body>
+</html>

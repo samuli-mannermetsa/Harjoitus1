@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Laskuri</title>
+<br>
+<p id="demo"></p>
+<br>
+Anna ensimmäinen luku: <input id ="luku" value = ""> <br><br>
+Anna toinen luku: <input id ="luku2" value = ""> <br><br>
+
+
+
+<button type="button" onclick="lasku1()" >+</button>
+<div id="tulos1"></div><br>
+<button type="button" onclick="lasku2()" >-</button>
+<div id="tulos2"></div><br>
+<button type = "button" onclick = "lasku7()" >x</button>
+<div id = "tulos7"></div><br>
+<button type="button" onclick="lasku3()" >/</button>
+<div id="tulos3"></div><br>
+<button type="button" onclick="lasku4()" >%</button>
+<div id="tulos4"></div><br>
+<button type="button" onclick="lasku5()" >Neliöjuuri</button>
+<div id="tulos5"></div><br>
+<button type="button" onclick="lasku6()" >Potenssi</button>
+<div id="tulos5"></div><br>
+
+<script>
+    function lasku1 (){
+        let numero1 = document.getElementById("luku").value
+        numero1 = parseFloat(numero1)
+        let numero2 = document.getElementById("luku2").value
+        numero2 = parseFloat(numero2)
+        let tulos = numero1 + numero2
+        document.getElementById("demo").innerHTML = "Ensimmäisen ja toisen luvun summa on = " + tulos;
+    }
+
+    function lasku2 (){
+        let numero1 = document.getElementById("luku").value
+        numero1 = parseFloat(numero1)
+        let numero2 = document.getElementById("luku2").value
+        numero2 = parseFloat(numero2)
+        let tulos = numero1 - numero2
+        document.getElementById("demo").innerHTML = "Ensimmäisen ja toisen luvun erotus on = " + tulos;
+    }
+    function lasku7 (){
+        let numero1 = document.getElementById("luku").value
+        numero1 = parseFloat(numero1)
+        let numero2 = document.getElementById("luku2").value
+        numero2 = parseFloat(numero2)
+        let tulos= numero1 * numero2
+        document.getElementById("demo").innerHTML = "Ensimmäisen ja toisen luvun tulo on = " + tulos;
+    }
+
+    function lasku3 (){
+        let numero1 = document.getElementById("luku").value
+        numero1 = parseFloat(numero1)
+        let numero2 = document.getElementById("luku2").value
+        numero2 = parseFloat(numero2)
+        let tulos = numero1 / numero2
+        document.getElementById("demo").innerHTML = "Ensimmäisen ja toisen luvun jako on = " + tulos;
+    }
+
+    function lasku4 (){
+        let numero1 = document.getElementById("luku").value
+        numero1 = parseFloat(numero1)
+        let numero2 = document.getElementById("luku2").value
+        numero2 = parseFloat(numero2)
+        let tulos = numero1 % numero2
+        document.getElementById("demo").innerHTML = "Ensimmäisen ja toisen luvun jakojäännös on = " + tulos;
+    }
+
+    function lasku5 (){
+        let numero1 = document.getElementById("luku").value
+        numero1 = parseFloat(numero1)
+        let numero2 = document.getElementById("luku2").value
+        numero2 = parseFloat(numero2)
+        let tulos1 = Math.sqrt(numero1)
+        let tulos2 = Math.sqrt(numero2)
+        document.getElementById("demo").innerHTML = "Ensimmäisen luvun neliöjuuri on = " + tulos1 + "  toisen luvun neliöjuuri on = " + tulos2;
+    }
+
+    function lasku6 (){
+        let numero1 = document.getElementById("luku").value
+        numero1 = parseFloat(numero1)
+        let numero2 = document.getElementById("luku2").value
+        numero2 = parseFloat(numero2)
+        let tulos = Math.pow(numero1, numero2)
+        document.getElementById("demo").innerHTML = "Ensimmäinen luku potenssiin toinen luku on = " + tulos;
+    }
+</script>
+
+</head>
+</html>

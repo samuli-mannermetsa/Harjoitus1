@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Products</h2>
+
+
+<p id="demo"></p>
+<table id="filterTable"></table>
+
+<script>
+let txt = "";
+let htmlTable = ""
+let products = ["milk", "coffee", "juice", "lemonade", "beer", "sour milk"];
+
+let filteredProducts = products.filter(myFilter)
+htmlTable = ""
+filteredProducts.forEach(createRow)
+document.getElementById("filterTable").innerHTML = htmlTable
+
+function myFilter(value) {
+  if (value[0] == "m" || value[0] == "j"){
+    return true
+  }
+  else {
+    return false
+  }
+
+}
+function createRow(value){
+  htmlTable+= "<tr><td>" + value + "</tr></td>"
+}
+</script>
+
+</body>
+</html>

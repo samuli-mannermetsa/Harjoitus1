@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Products</h2>
+<p id="demo"></p>
+
+<script>
+var products = ["milk", "coffee", "juice", "lemonade", "beer", "sour milk"];
+
+let txt = "";
+products.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value, index, array) {
+  txt += value + "<br>";
+}
+</script>
+
+</body>
+</html>

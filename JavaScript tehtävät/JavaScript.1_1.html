@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function changeText() {
+  document.getElementById("demo").innerHTML = "Donald Duck";
+}
+function changeColor() {
+	console.log("changeColor() called")
+  	document.getElementById("demo").style.backgroundColor = "red"
+  }
+function changeTextB() {
+  document.getElementById("demo").innerHTML = "Mickey Mouse";
+}
+function changeColorB() {
+	console.log("changeColor() called")
+  	document.getElementById("demo").style.backgroundColor = "white"
+  }
+function changeB() {
+  document.getElementById("demo").innerHTML = "Mickey Mouse";
+  document.getElementById("demo").style.backgroundColor = "white"
+  }
+</script>
+</head>
+<body>
+
+<h2>Testing how to change the text and style of an element on the page</h2>
+
+<p id="demo">Mickey Mouse</p>
+
+
+<button type="button" onclick="changeText()">Change name!</button>
+
+<button type="button" onclick="changeColor()">Change color!</button>
+
+<button type="button" onclick="changeTextB()">Back to original name</button>
+
+<button type="button" onclick="changeColorB()">Back to original color</button>
+
+<button type="button" onclick="changeB()">Back to original</button>
+
+</body>
+</html> 

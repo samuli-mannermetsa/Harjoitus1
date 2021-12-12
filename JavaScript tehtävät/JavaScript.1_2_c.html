@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> Kesäpäivän lämpötila: </p>
+
+Anna päivän lämpötila: <input id = "temp" value = "" />
+
+
+<button type = "button" onclick = "myFunction()">Tarkista! </button>
+<div id = "demo"></div>
+
+<script>
+    function myFunction() {
+        let a = document.getElementById("temp").value
+        if (a== 0 || a < 11){
+            greeting = "Kylmää";
+        }
+        else if (a == 11 || a <= 15){
+            greeting = "Koleaa";
+        }
+        else if (a == 16 || a <= 20){
+            greeting = "Melko melko lämmintä";
+        }
+        else if (a == 21 || a <=25){
+            greeting = "Lämmintä"
+        }
+        else if (a == 26 || a <=30){
+            greeting = "Hellettä"
+        }
+        document.getElementById("demo").innerHTML = greeting;
+    }
+</script>
+
+</body>
+</html>

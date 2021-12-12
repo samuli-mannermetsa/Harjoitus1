@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table, th, td {
+        border:1px solid black;
+    }
+</style>
+<body>
+
+    <h3>Halvin ensin</h3>
+
+        <table id="sortedTable"></table>
+
+<script>
+    var products = [
+    {name: "milk", price: 1.10},
+    {name: "coffee" , price: 3.50},
+    {name: "juice" , price: 0.75},
+    {name: "lemonade" , price: 0.90},
+    {name: "beer" , price: 2.70},
+    {name: "sour milk" , price: 0.80}
+    ];
+
+    var htmlTable = ""
+
+    products.sort(priceSort)
+    products.forEach(createRow)
+    document.getElementById("sortedTable").innerHTML = htmlTable
+
+function createRow(value) {
+    htmlTable += "<tr><td>" + value.name + "</td><td>" + value.price + "</td></tr>"
+}
+
+function priceSort(a, b) {
+    if(a.price <= b.price)return -1
+    else return 1
+}
+
+</script>
+</body>
+</html>

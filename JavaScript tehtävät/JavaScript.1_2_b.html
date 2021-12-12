@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function to convert from Fahrenheit to Celsius:</p>
+
+Fahrenheit = <input type="text" id="fahr"> <br/>
+<br/>
+<button type="button" onclick="Count()">Convert to Celcius</button>
+
+<div id="tulos"></div>
+<p Celcius id="demo"></p>
+
+<script>
+	function Count() {
+    let fahr = document.getElementById("fahr").value
+    fahr =parseFloat(fahr)
+    
+    let total = (fahr - 32) * 0.5556
+    console.log("Celcius: " + total)
+    document.getElementById("tulos").innerHTML = Math.round(.1)
+    document.getElementById("tulos").innerHTML = "Celcius " + total;
+    return
+}
+
+</script>
+</body>
+</html>
